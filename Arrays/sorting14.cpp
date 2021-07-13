@@ -1,0 +1,60 @@
+/******<CODE NEVER DIE>******/
+#include<bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+#define FastIO ios_base::sync_with_stdio(0)
+#define IN cin.tie(0)
+#define OUT cout.tie(0)
+#define CIG cin.ignore()
+#define pb push_back
+#define pa pair<int,int>
+#define f first
+#define s second
+#define FOR(i,n,m) for(ll i=n;i<=m;i++)
+#define FORD(i,n,m) for(int i=m;i>=n;i--)
+#define reset(A) memset(A,0,sizeof(A))
+#define FILEIN freopen("inputDTL.txt","r",stdin)
+#define FILEOUT freopen("outputDTL.txt","w",stdout)
+
+/**********DTL**********/
+
+long long const mod=1e9+7;
+int const MAX=1e5+5;
+
+/**********DTL**********/
+
+/**********DTL**********/
+
+/**********main function**********/
+
+int main(){
+    FastIO; IN; OUT;
+
+    int test;
+    cin >> test;
+    while(test--){
+		ll n;
+		cin >> n;
+		ll a[n+5];
+		ll chuaxet[100005];
+		reset(chuaxet);
+		FOR(i,1,n){
+			cin >> a[i];
+		}
+		FOR(i,1,n){
+			chuaxet[a[i]]=1;
+		}
+		int count=0;
+		sort(a+1,a+n+1);
+		ll Max=a[n];
+		ll Min=a[1];
+		FOR(i,Min,Max){
+			if(chuaxet[i]==0){
+				count++;
+			}
+		}
+		cout << count << endl;
+    }
+    return 0;
+}
